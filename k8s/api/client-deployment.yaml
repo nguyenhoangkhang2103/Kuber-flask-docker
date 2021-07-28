@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: web
+  template:
+    metadata:
+      labels:
+        component: web
+    spec:
+      containers:
+        - name: client
+          image: asengame/flask-docker:v1
+          ports:
+            - containerPort: 80
+          env:
+            - name: REDIS_HOST
+              value: redis-cluster-ip-service
+            - name: REDIS_PORT
+              value: '6379'
+            - name: PGHOST
+              value: postgres-cluster-ip-service
+            - name: POSTGRES_USER
+              value: flask_db_admin
+            - name: POSTGRES_DB
+              value: flask_db
+            - name: POSTGRES_PASSWORD
+              value: asengame

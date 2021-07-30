@@ -9,6 +9,8 @@ RUN pip install -r /app/re1.txt
 
 EXPOSE 80
 
+WORKDIR ./puppycompanyblog
+
 CMD [ "pythom", "createdb.py" ]
 
 CMD [ "python", "app.py" ]

@@ -27,7 +27,10 @@ spec:
             - name: POSTGRES_DB
               value: flask_db
             - name: POSTGRES_PASSWORD
-              value: asengame
+              valueFrom:
+                secretKeyRef:
+                  name: pgpassword
+                  key: POSTGRES_PASSWORD
             - name: PGHOST
               value: postgres-cluster-ip-service
           volumeMounts:

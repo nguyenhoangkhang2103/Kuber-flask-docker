@@ -18,8 +18,10 @@ spec:
           ports:
             - containerPort: 5050
           env:
-            - PGADMIN_DEFAULT_EMAIL: admin@khangnguyen.com
-            - PGADMIN_DEFAULT_PASSWORD: asengame
+            - name: PGADMIN_DEFAULT_EMAIL
+            - value: admin@khangnguyen.com
+            - name: PGADMIN_DEFAULT_PASSWORD
+            - value: asengame
           volumeMounts:
             - name: postgres-admin-storage
               mountPath: /var/lib/psql/pgadminData

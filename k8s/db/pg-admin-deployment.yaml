@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-admin-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: postgres-admin
+  template:
+    metadata:
+      labels:
+        component: postgres-admin
+    spec:
+      containers:
+        - name: psq-admin
+          image: dpage/pgadmin4
+          ports:
+            - containerPort: 5050
+          env:
+            - PGADMIN_DEFAULT_EMAIL: admin@khangnguyen.com
+            - PGADMIN_DEFAULT_PASSWORD: asengame
+          volumeMounts:
+            - name: postgres-admin-storage
+              mountPath: /var/lib/psql/pgadminData

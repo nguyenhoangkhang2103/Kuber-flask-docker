@@ -27,5 +27,5 @@ spec:
             - name: PGADMIN_DEFAULT_PASSWORD
               value: asengame
           volumeMounts:
-            - name: postgres-admin-storage
+            - name: postgres-storage
               mountPath: /var/lib/psql/pgadminData

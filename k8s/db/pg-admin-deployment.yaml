@@ -28,4 +28,4 @@ spec:
               value: asengame
           volumeMounts:
             - name: postgres-storage
-              mountPath: /var/lib/psql/pgadminData
+              mountPath: /var/lib/psql/pgadmindata

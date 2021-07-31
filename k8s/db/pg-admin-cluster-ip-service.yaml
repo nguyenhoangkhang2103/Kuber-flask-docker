@@ -5,7 +5,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    component: postgres-admin
+    component: psq-admin
   ports:
     - port: 5050
       targetPort: 5050

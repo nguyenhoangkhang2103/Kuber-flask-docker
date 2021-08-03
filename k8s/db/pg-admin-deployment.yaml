@@ -13,7 +13,7 @@ spec:
         component: postgres-admin
     spec:
       volumes:
-        - name: postgres-storage
+        - name: postgres-admin-storage
           persistentVolumeClaim:
             claimName: database-pg-admin-persistent-volume-claim
       containers:
@@ -29,5 +29,5 @@ spec:
             - name: PGADMIN_LISTEN_PORT
               value: '5050'
           volumeMounts:
-            - name: postgres-storage
+            - name: postgres-admin-storage
               mountPath: /var/lib/psql/pgadmin4

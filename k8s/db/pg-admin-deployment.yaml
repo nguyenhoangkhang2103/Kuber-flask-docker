@@ -12,10 +12,6 @@ spec:
       labels:
         component: postgres-admin
     spec:
-      volumes:
-        - name: postgres-storage
-          persistentVolumeClaim:
-            claimName: database-persistent-volume-claim
       containers:
         - name: psq-admin
           image: dpage/pgadmin4
@@ -26,6 +22,3 @@ spec:
               value: admin@khangnguyen.com
             - name: PGADMIN_DEFAULT_PASSWORD
               value: asengame
-          volumeMounts:
-            - name: postgres-storage
-              mountPath: /var/lib/psql/pgadmindata

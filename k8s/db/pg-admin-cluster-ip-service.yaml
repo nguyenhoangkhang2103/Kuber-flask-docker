@@ -3,10 +3,9 @@ kind: Service
 metadata:
   name: pg-admin-cluster-ip-service
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     component: postgres-admin
   ports:
     - port: 5050
-      nodePort: 30080
       targetPort: 5050

@@ -16,5 +16,5 @@ spec:
               serviceName: client-cluster-ip-service
               servicePort: 80
             backend:
-              serviceName: pg-admin-cluster-ip-service
-              servicePort: 5050
+              serviceName: postgres-cluster-ip-service
+              servicePort: 5432

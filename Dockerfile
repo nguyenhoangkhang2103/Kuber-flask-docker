@@ -6,11 +6,10 @@ COPY ./puppycompanyblog/ ./puppycompanyblog/
 COPY ./app.py .
 COPY ./requirements.txt .
 COPY ./createdb.py .
+COPY ./entrypoint.sh .
 
 RUN pip install -r /app/requirements.txt
 
 EXPOSE 80
 
-CMD [ "python", "createdb.py" ]
-
-CMD [ "python", "app.py" ]
+ENTRYPOINT ./entrypoint.sh

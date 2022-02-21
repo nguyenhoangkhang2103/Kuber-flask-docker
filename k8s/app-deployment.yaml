@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: asengame/flask-docker:v2
+          image: asengame/flask-docker:v1
           ports:
             - name: app-port
               containerPort: 80

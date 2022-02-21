@@ -14,4 +14,4 @@ WORKDIR ./puppycompanyblog
 
 CMD [ "python", "createdb.py" ]
 
-CMD [ "python", "app.py" ]
+CMD [ "python", "../app.py" ]

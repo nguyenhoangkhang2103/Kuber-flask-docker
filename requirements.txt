@@ -17,3 +17,5 @@ email_validator
 Pillow
 psycopg2-binary
 Flask-WTF
+pytest-cov
+pytest

@@ -1,3 +1,4 @@
+####
 docker build -t asengame/flask-docker:v1  -t asengame/flask-docker:$SHA .
 docker push asengame/flask-docker:v1
 docker push asengame/flask-docker:$SHA

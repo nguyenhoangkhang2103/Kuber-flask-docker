@@ -12,4 +12,4 @@ RUN pip install -r /app/requirements.txt
 
 EXPOSE 80
 
-ENTRYPOINT ./entrypoint.sh
+CMD ["/bin/sh", "entrypoint.sh"]

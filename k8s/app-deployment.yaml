@@ -18,14 +18,10 @@ spec:
       containers:
         - name: app
           image: asengame/flask-docker:v1
-          imagePullPolicy: Always
           ports:
             - name: app-port
               containerPort: 80
       initContainers:
-      - name: init-postgres
-        image: busybox:1.28
-        command: ['sh', '-c', "until nslookup postgres; do echo waiting for postgres; sleep 2; done"]
-      - name: init-redis
-        image: busybox:1.28
-        command: ['sh', '-c', "until nslookup redis; do echo waiting for redis; sleep 2; done"]
+        - name: init-postgres
+          image: busybox:1.28
+          command: ['sh', '-c', "until nslookup postgres.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for myservice; sleep 2; done"]

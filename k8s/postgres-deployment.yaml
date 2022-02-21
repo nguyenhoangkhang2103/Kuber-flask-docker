@@ -2,15 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: postgres
+  labels:
+    app: postgres
 spec:
   replicas: 1
   selector:
     matchLabels:
-      component: postgres
+      app: postgres
   template:
     metadata:
+      name: postgres
       labels:
-        component: postgres
+        app: postgres
     spec:
       volumes:
         - name: postgres-storage
@@ -18,7 +21,7 @@ spec:
             claimName: app-postgres
       containers:
         - name: postgres
-          image: postgres:12.7-alpine
+          image: postgres:12.10-alpine
           ports:
             - containerPort: 5432
           env:
@@ -29,7 +32,7 @@ spec:
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: app-secrect
+                  name: app-secret
                   key: db-pass
           volumeMounts:
             - name: postgres-storage

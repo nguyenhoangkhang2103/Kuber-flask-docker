@@ -2,7 +2,7 @@ FROM python:3.8.12-buster
 
 WORKDIR /app
 
-COPY ./puppycompanyblog/* ./
+COPY ./puppycompanyblog/ ./puppycompanyblog/
 COPY ./app.py .
 COPY ./requirements.txt .
 

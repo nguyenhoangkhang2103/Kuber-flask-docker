@@ -21,7 +21,7 @@ spec:
             claimName: app-postgres
       containers:
         - name: postgres
-          image: postgres:12.10-alpine
+          image: postgres
           ports:
             - containerPort: 5432
           env:

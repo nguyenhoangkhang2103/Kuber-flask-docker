@@ -13,4 +13,4 @@ EXPOSE 80
 
 CMD [ "python", "createdb.py" ]
 
-CMD [ "python", "../app.py" ]
+CMD [ "python", "app.py" ]

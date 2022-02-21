@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: client-deployment
+  name: app-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      component: web
+      component: app
   template:
     metadata:
       labels:
-        component: web
+        component: app
     spec:
       containers:
         - name: client
-          image: asengame/flask-docker:v1
+          image: asengame/flask-docker:v2
           ports:
             - containerPort: 80
           env:

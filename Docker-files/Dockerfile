@@ -2,8 +2,9 @@ FROM python:3.8.11-buster
 
 WORKDIR /app
 
-COPY ./ .
-
+COPY ./puppycompanyblog .
+COPY ./app.py .
+COPY ./requirements.txt .
 
 RUN pip install -r /app/requirements.txt
 

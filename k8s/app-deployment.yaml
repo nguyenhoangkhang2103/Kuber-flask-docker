@@ -14,14 +14,14 @@ spec:
     spec:
       containers:
         - name: client
-          image: asengame/flask-docker:v3
+          image: asengame/flask-docker:v4
           ports:
             - name: app-port
               containerPort: 80
       initContainers:
       - name: init-postgres
         image: busybox:1.28
-        command: ['sh', '-c', "until nslookup postgres; do echo waiting for mydb; sleep 2; done"]
+        command: ['sh', '-c', "until nslookup postgres; do echo waiting for postgres; sleep 2; done"]
       - name: init-redis
         image: busybox:1.28
-        command: ['sh', '-c', "until nslookup redis; do echo waiting for memcached; sleep 2; done"]
+        command: ['sh', '-c', "until nslookup redis; do echo waiting for redis; sleep 2; done"]
